@@ -7,7 +7,7 @@ libname homework 	"/home/u54560152/sasuser.v94/Homework";
 
   %let wrds=wrds.wharton.upenn.edu 4016;
   options comamid=TCP remote=WRDS netencryptalgorithm=" ";
-  SIGNON user='kzhupuno' password='!Milena20152015';      
+  SIGNON user='*****' password='*****';      
   %SYSLPUT _ALL_; 
   RSUBMIT;
  
@@ -256,14 +256,6 @@ run;
 *	Generate an output table (variable as row and statistics as columns) and export it to 
 an XLSX-file named ‘EmpFin21_GroupNumber_Task1’;
 
-PROC TRANSPOSE DATA=descriptive_statistics
-	OUT=descriptive_statistics_trans
-	PREFIX= N mean median std;
-	
-BY HouYear;
-VAR earn_fc;
-RUN;
-  
 proc export data = descriptive_statistics
 			outfile = "/home/u54560152/sasuser.v94/Homework/EmpFin21_GroupNumber_Task1" 
 			dbms= xlsx 
