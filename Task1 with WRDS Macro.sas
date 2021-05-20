@@ -44,8 +44,7 @@ data funda (keep= GVKEY IID DATADATE FYEAR SICH CSHO PRCC_F IB SPI CEQ ACT CHE L
     
 	if month(HouDate) >= 7 then HouYear = year(HouDate) + 1; else HouYear = year(HouDate);
 	if mdy(07,01,1995) <= HouDate <= mdy(06,30,2019);
-	*if 2999 <= sich <= 3510;
-	*if 21 <= FFI48 <= 30;
+
 	
 	format HouDate DDMMYY10.;
 	format DataDate DDMMYY10.; *give a proper format;
@@ -66,7 +65,8 @@ run;
   Data homework.funda;
   	SET WORK.funda;
   run;
-  
+ 
+ *add the FFi48 identifiers to the dataset;
   
   proc sql;
 	create table homework.matched as
