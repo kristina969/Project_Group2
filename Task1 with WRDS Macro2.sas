@@ -242,7 +242,7 @@ run;
 *Create interaction term;
 data homework.funda6;
 	set homework.funda6;
-	INT = NegE*Earn_share; label INT_w = "Interaction term winsorized"
+	INT = NegE*Earn_share; label INT_w = "Interaction term winsorized";
 	INT_w = NegE_w*Earn_share_w; label INT_w = "Interaction term";	
 run;
 
