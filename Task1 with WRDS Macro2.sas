@@ -307,17 +307,19 @@ proc means data=homework.earnings_forecast N mean median std;
 run;
 
 
-
 *	Generate an output table (variable as row and statistics as columns) and export it to 
 an XLSX-file named ‘EmpFin21_GroupNumber_Task1’;
 
+
 PROC TRANSPOSE DATA=descriptive_statistics
-	OUT=descriptive_statistics_trans
-	PREFIX= N mean median std;
-	
+	OUT=descriptive_statistics_trans;
 BY HouYear;
+id _stat_;
 VAR earn_fc;
 RUN;
+
+
+
   
 proc export data = descriptive_statistics
 			outfile = "/home/u54560152/sasuser.v94/Homework/EmpFin21_GroupNumber_Task1" 
