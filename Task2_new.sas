@@ -2,7 +2,7 @@ libname homework "/home/u54560152/sasuser.v94/Homework";
 
   %let wrds=wrds.wharton.upenn.edu 4016;
   options comamid=TCP remote=WRDS netencryptalgorithm=" ";
-  SIGNON user='kzhupuno' password='!Milena20152015';      
+  SIGNON user='**' password='***';      
   %SYSLPUT _ALL_; 
   RSUBMIT;
   
@@ -116,6 +116,9 @@ run;
 proc sort data = homework.matching;
 	by gvkey datadate;
 run;
+
+
+*sic_codes datei  voeher manuell aus WRDS herunterladen!!!;
 
 data homework.sic_codes;
 set homework.sic_codes;
