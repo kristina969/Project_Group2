@@ -95,7 +95,7 @@ libname homework "/home/u54560152/sasuser.v94/Homework";
  
  
  
- Data homework.numbers;
+ Data homework.numbers_task2;
 	do i= 1 to 9999;
 	i = i;
 	OUTPUT;
@@ -105,15 +105,15 @@ run;
 
 %include '/home/u54560152/sasuser.v94/Homework/Macro FFI48.sas';
 
-Data homework.matching;
-	set homework.numbers;
+Data homework.matching_task2;
+	set homework.numbers_task2;
 	%FFI48(i);
 	if missing(FFI48) then delete;
 	rename i = sic;
 run;
 
 
-proc sort data = homework.matching;
+proc sort data = homework.matching_task2;
 	by gvkey datadate;
 run;
 
@@ -137,7 +137,7 @@ run;
 			b.FFI48
 
 	from	homework.sic_codes a
-	join	homework.matching b
+	join	homework.matching_task2 b
     
 	on a.sic_num = b.sic;
 quit; 
