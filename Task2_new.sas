@@ -164,11 +164,15 @@ proc sql;
 quit; 
 
 
+
+
+
 data homework.betas;
 	set homework.betas;
 	if 21 <= FFI48 <= 30;
+	month = month(datadate);
+	year = year(datadate);
 run;
-
 
 *Compute descriptive statistics (N, mean, median, standard deviation) for the CAPM betas 
 in your industry, generate an output table (variable as row and statistics as columns) and 
