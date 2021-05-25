@@ -1,8 +1,8 @@
-libname homework "/home/u54560152/sasuser.v94/Homework";
+libname homework "/home/u37603408/sasuser.v94/Homework";
 
   %let wrds=wrds.wharton.upenn.edu 4016;
   options comamid=TCP remote=WRDS netencryptalgorithm=" ";
-  SIGNON user='**' password='***';      
+  SIGNON user='azellner' password='Wimeovdc1337wrds';      
   %SYSLPUT _ALL_; 
   RSUBMIT;
   
@@ -103,7 +103,7 @@ libname homework "/home/u54560152/sasuser.v94/Homework";
 run;
 
 
-%include '/home/u54560152/sasuser.v94/Homework/Macro FFI48.sas';
+%include '/home/u37603408/sasuser.v94/Homework/Macro_FFI48.sas';
 
 Data homework.matching_task2;
 	set homework.numbers_task2;
@@ -113,9 +113,6 @@ Data homework.matching_task2;
 run;
 
 
-proc sort data = homework.matching_task2;
-	by gvkey datadate;
-run;
 
 
 *sic_codes datei  voeher manuell aus WRDS herunterladen!!!;
