@@ -176,6 +176,31 @@ export it to an XLSX-file named ‘EmpFin21_GroupNumber_Task2’.;
 
 
 
+proc means data=homework.betas N mean median std;
+	var beta;
+	class year;
+	OUTPUT OUT= descriptive_statistics_betas;
+run;
+
+
+
+PROC TRANSPOSE DATA=descriptive_statistics_betas
+	OUT=descriptive_statistics_betas_t;
+BY year;
+id _stat_;
+VAR beta;
+RUN;
+
+
+proc export data = descriptive_statistics_betas_t
+			outfile = "/home/u54560152/sasuser.v94/Homework/EmpFin21_GroupNumber_Task2" 
+			dbms= xlsx 
+			replace;
+run;
+
+
+
+
 
 
  
