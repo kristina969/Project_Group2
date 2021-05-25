@@ -75,7 +75,7 @@ libname homework "/home/u54560152/sasuser.v94/Homework";
   
      %MEND;
 
-     %CAPM_BETA ( START=01JAN1997, 
+     %CAPM_BETA ( START=01JAN2000, 
                     END=31DEC2018,
                  WINDOW=60,
                  MINWIN=36,
