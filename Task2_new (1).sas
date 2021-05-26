@@ -2,7 +2,7 @@ libname homework "/home/u54560152/sasuser.v94/Homework";
 
   %let wrds=wrds.wharton.upenn.edu 4016;
   options comamid=TCP remote=WRDS netencryptalgorithm=" ";
-  SIGNON user='kzhupuno' password='!Milena20152015';      
+  SIGNON user='****' password='****';      
   %SYSLPUT _ALL_; 
   RSUBMIT;
   
