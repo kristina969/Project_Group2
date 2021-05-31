@@ -1,10 +1,9 @@
 *3)	 You now have all data needed to calculate the regression variables. 
 
-o	Merge the earnings forecasts and the risk measure with the required FUNDA data for
+- Merge the earnings forecasts and the risk measure with the required FUNDA data for
  your respective industry. 
  
-
-o	Compute descriptive statistics (N, mean, median, standard deviation) for all regression
+- Compute descriptive statistics (N, mean, median, standard deviation) for all regression
  variables, generate an output table (variables as rows and statistics as columns) and export
  it as an XLSX-file named ‘EmpFin21_GroupNumber_Task3’.;
  
@@ -275,17 +274,15 @@ data comparison;
 run;
 
 
-
-s
 PROC TRANSPOSE DATA=comparison
-	OUT=comparison_Task3_t;
+	OUT=comparison_Task4_t;
 id Intercept Profit_m Payout_m Growth_m Risk_m;
 VAR params tstat;
 RUN;
 
 
-proc export data = descriptive_statistics_Task3_t
-			outfile = "/home/u54560152/sasuser.v94/Homework/EmpFin21_GroupNumber_Task3" 
+proc export data = descriptive_statistics_Task4_t
+			outfile = "/home/u54560152/sasuser.v94/Homework/EmpFin21_GroupNumber_Task4" 
 			dbms= xlsx 
 			replace;
 run;
