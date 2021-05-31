@@ -128,8 +128,8 @@ Mild outlier: if observation falls outside [Q1 – 1.5 ∙ IQR, Q3 + 1.5 ∙ IQR
         SET &dataset.;
         IQR = &var._p75-&var._p25;
   
-        IF &var. < &var._p25-1.5 * IQR THEN &var._m = &var._p25-1.5;
-		ELSE IF &var. > &var._p75+1.5 * IQR THEN &var._m = &var._p75+1.5;
+        IF &var. < &var._p25-1.5 * IQR THEN &var._m = &var._p25-1.5*IQR;
+		ELSE IF &var. > &var._p75+1.5 * IQR THEN &var._m = &var._p75+1.5*IQR;
 		ELSE &var._m = &var.; 
      RUN;
 
