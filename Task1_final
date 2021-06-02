@@ -26,7 +26,7 @@ run;
 
   %let wrds=wrds.wharton.upenn.edu 4016;
   options comamid=TCP remote=WRDS netencryptalgorithm=" ";
-  SIGNON user='kzhupuno' password='!Milena20152015';      
+  SIGNON user='***' password='***';      
   %SYSLPUT _ALL_; 
   RSUBMIT;
   
@@ -126,7 +126,7 @@ data homework.funda2;
     FIN = ((IVST+IVAO)-(DLTT+DLC+PSTK)); label FIN= "Net Financial Assets";
     
     Earn = ib-spi; label Earn = "Firm level earnings";
-    Earn_share = (ib -spi)/csho; label Earn_share ="Per share earnings"
+    Earn_share = (ib -spi)/csho; label Earn_share ="Per share earnings";
     
 run;	
 
