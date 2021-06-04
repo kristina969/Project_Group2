@@ -12,19 +12,25 @@
  libname homework "/home/u54560152/sasuser.v94/Homework";
 
 * Merge the earnings forecasts and the risk measure (beta);
+
+
  proc sql;
 	create table homework.model_variables as
 	select	a.*,
 			b.beta
 			
 
-	from 		homework.earnings_forecast	as a
+	from        homework.earnings_forecast	as a
 	join	    homework.betas		as b
 
 	on a.gvkey = b.gvkey
 	and a.iid = b.iid
 	and a.houyear = year(b.datadate)
-	and month(b.datadate) = 6;
+	and a.houdate <= mdy(06,30,b.datadate)
+	and month(b.datadate) = 6
+	
+	group by a.gvkey, a.HouYear
+	having a.houdate = max(a.houdate);
 quit;
 
 
