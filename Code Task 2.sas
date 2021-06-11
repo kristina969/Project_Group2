@@ -114,7 +114,7 @@ ff.factors_monthly;
  
  
  *Keep only observation were beta was calculated successfully (for some  observations we don't 
- have  both the market-return and the stock return and we cant't calculate beta);
+ have  both the market-return and the stock return and we can't calculate beta);
  data homework.__capm_beta_compustat;
 			set homework.__capm_beta_compustat;
 			if not(missing(beta));
