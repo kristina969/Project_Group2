@@ -157,12 +157,12 @@ proc sql;
 	order by gvkey, houdate;
 quit;
 
-*calculate the accrulals;
+*calculate the accruals;
 
 Data homework.funda3;
 	set homework.funda3;
 	TACC = ((WC -L1_WC) + (NCO-L1_NCO) + (FIN-L1_FIN))/csho; 
-	label TACC= "Total Accrulals per share";
+	label TACC= "Total Accruals per share";
 
 run;
 
@@ -203,7 +203,7 @@ data homework.funda6;
 	if not(missing(Earn_share));
 run;
 
-* We create a macro to winsorize variables annualy;
+* We create a macro to winsorize variables annualLy;
 
 %MACRO Winsorize(var=,yearvar=, dataset=);
          
